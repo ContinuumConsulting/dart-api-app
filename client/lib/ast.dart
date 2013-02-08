@@ -22,7 +22,7 @@ final MAX_REFERENCES_TO_TRACK = 100;
  * loaded libraries. All code must be written to work properly if more libraries
  * are loaded incrementally.
  */
-final libraries = new ObservableMap<String, LibraryElement>();
+final libraries = new ObservableMap<String, LibraryElement>.linked();
 
 /**
  * Package being actively viewed.
