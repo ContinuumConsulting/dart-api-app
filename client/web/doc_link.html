@@ -7,6 +7,7 @@
       import 'package:api_doc/ast.dart';
       import 'package:api_doc/model.dart';
 
+      @observable
       class DocLink extends WebComponent {
         /** Must be a Reference or Element. */
         var ref;
@@ -28,6 +29,7 @@
        * For example, for class members, a [LongDocLink] includes the name
        * of the class the member is from.
        */
+      @observable
       class LongDocLink extends WebComponent {
         Element ref;
       }

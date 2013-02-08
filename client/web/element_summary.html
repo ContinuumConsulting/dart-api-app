@@ -23,6 +23,7 @@
       import 'package:api_doc/ast.dart';
       import 'package:api_doc/model.dart';
 
+      @observable
       class MemberBlocks extends WebComponent {
         List<ElementBlock> blocks;
         /** Parent element that we are displaying blocks for. */
@@ -48,6 +49,7 @@
       import 'package:api_doc/ast.dart';
       import 'package:api_doc/model.dart';
 
+      @observable
       class ElementSignature extends WebComponent {
         Element element;
 
@@ -95,6 +97,7 @@
       import 'package:api_doc/ast.dart';
       import 'package:api_doc/model.dart';
 
+      @observable
       class ElementSummary extends WebComponent {
         Element element;
         /** Whether we should display where the element was defined. */
@@ -130,6 +133,7 @@
       import 'package:api_doc/ast.dart';
       import 'package:api_doc/model.dart';
 
+      @observable
       class ClassHierarchySubtree extends WebComponent {
         ClassElement clazz;
         int index;
@@ -147,6 +151,7 @@
       import 'package:api_doc/ast.dart';
       import 'package:api_doc/model.dart';
 
+      @observable
       class ClassHierarchy extends WebComponent {
         ClassElement clazz;
       }

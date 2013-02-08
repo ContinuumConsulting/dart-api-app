@@ -6,10 +6,12 @@
  * AST describing all information about Dart libraries required to render
  * Dart documentation.
  */
+@observable
 library ast;
 
 import 'dart:json' as json;
 import 'package:web_ui/safe_html.dart';
+import 'package:web_ui/observe.dart';
 import 'markdown.dart' as md;
 import 'library_loader.dart' as library_loader;
 
@@ -20,7 +22,7 @@ final MAX_REFERENCES_TO_TRACK = 100;
  * loaded libraries. All code must be written to work properly if more libraries
  * are loaded incrementally.
  */
-final libraries = <String, LibraryElement>{};
+final libraries = new ObservableMap<String, LibraryElement>();
 
 /**
  * Package being actively viewed.

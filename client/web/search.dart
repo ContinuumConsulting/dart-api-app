@@ -5,6 +5,7 @@ import 'package:api_doc/ast.dart';
 import 'package:api_doc/model.dart';
 import 'package:web_ui/watcher.dart' as watchers;
 
+@observable
 class Search extends WebComponent {
   /** Search query. */
   String searchQuery = "";

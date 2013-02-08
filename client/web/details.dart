@@ -3,6 +3,7 @@ import 'package:web_ui/web_ui.dart';
 
 const OPEN_CSS_CLASS = "open-details";
 
+@observable
 class Details extends WebComponent {
   bool _open = false;
 

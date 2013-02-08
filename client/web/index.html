@@ -235,17 +235,19 @@
     </div>
     </template>
     <script type="application/dart">
-
-import 'dart:uri' as uri;
+import 'dart:html';
 import 'package:web_ui/watcher.dart' as watchers;
 import 'package:api_doc/ast.dart';
 import 'package:api_doc/model.dart';
 import 'package:api_doc/resources.dart';
 
 main() {
-  loadStateFromUrl();
-  loadModel().then((_) {
-    watchers.dispatch();
+  watchers.useObservers = true;
+  window.setImmediate(() {
+    loadStateFromUrl();
+    loadModel().then((_) {
+      watchers.dispatch();
+    });
   });
 }
     </script>

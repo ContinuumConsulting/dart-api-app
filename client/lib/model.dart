@@ -2,12 +2,15 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+@observable
 library apidoc_model;
 
 import 'dart:async';
 import 'dart:html' as html;
 import 'dart:json' as json;
 import 'package:web_ui/watcher.dart' as watchers;
+import 'package:web_ui/observe/html.dart';
+import 'package:web_ui/observe.dart' show observe;
 import 'package:web_ui/safe_html.dart';
 import 'package:poppy/trie.dart';
 import 'markdown.dart' as md;
@@ -110,15 +113,13 @@ void _recomputeActiveState() {
  * Scrolls the [currentElement] into view.
  */
 void scrollIntoView() {
-  // TODO(jacobr): there should be a cleaner way to run code that executes
-  // after the UI updates. https://github.com/dart-lang/web-ui/issues/188
-  html.window.setTimeout(() {
+  html.window.setImmediate(() {
     if (currentElement != null) {
       for (var e in html.queryAll('[data-id="${currentElement.id}"]')) {
         e.scrollIntoView(false);
       }
     }
-  }, 0);
+  });
 }
 
 /**
@@ -189,7 +190,7 @@ String permalink(var obj) {
 }
 
 void loadStateFromUrl() {
-  String link = html.window.location.hash;
+  String link = locationHash;
   var data = {};
   if (link.length > 2) {
     try {
@@ -218,16 +219,7 @@ void loadStateFromUrl() {
 }
 
 Future loadModel() {
-  // Note: listen on both popState and hashChange, because IE9 doens't support
-  // history API, and it doesn't work properly on Opera 12.
-  // See http://dartbug.com/5483
-  updateState(e) {
-    loadStateFromUrl();
-    watchers.dispatch();
-  }
-  html.window.on
-    ..popState.add(updateState)
-    ..hashChange.add(updateState);
+  observe(() => locationHash, (_) => loadStateFromUrl());
 
   // Patch in support for [:...:]-style code to the markdown parser.
   // TODO(rnystrom): Markdown already has syntax for this. Phase this out?

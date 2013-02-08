@@ -13,3 +13,5 @@ dependencies:
   poppy: any
   widget: any
   routing: any
+  # TODO(jmesserly): workaround for web_ui not being published yet
+  analyzer_experimental: any
