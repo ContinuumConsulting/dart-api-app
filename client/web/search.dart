@@ -3,7 +3,6 @@ import 'dart:html' as html;
 import 'package:web_ui/web_ui.dart';
 import 'package:api_doc/ast.dart';
 import 'package:api_doc/model.dart';
-import 'package:web_ui/watcher.dart' as watchers;
 
 @observable
 class Search extends WebComponent {
@@ -32,7 +31,6 @@ class Search extends WebComponent {
             onSubmitCallback();
             _pendingSubmit = false;
           }
-          watchers.dispatch();
         }
       }, 50);
     }
@@ -48,14 +46,12 @@ class Search extends WebComponent {
       if (document.activeElement == null ||
           !this.contains(document.activeElement)) {
         isFocused = false;
-        watchers.dispatch();
       }
     }, 50);
   }
 
   void onFocusCallback(_) {
     isFocused = true;
-    watchers.dispatch();
   }
 
   void onSubmitCallback() {

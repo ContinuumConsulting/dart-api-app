@@ -243,12 +243,8 @@ import 'package:api_doc/resources.dart';
 
 main() {
   watchers.useObservers = true;
-  window.setImmediate(() {
-    loadStateFromUrl();
-    loadModel().then((_) {
-      watchers.dispatch();
-    });
-  });
+  loadStateFromUrl();
+  loadModel();
 }
     </script>
     <script src="packages/browser/dart.js" type="text/javascript"></script>
