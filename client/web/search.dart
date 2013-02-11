@@ -8,8 +8,7 @@ import 'package:api_doc/model.dart';
 class Search extends WebComponent {
   /** Search query. */
   String searchQuery = "";
-  List<SearchResult> _results = <SearchResult>[];
-  String _lastQuery;
+  List<SearchResult> results = <SearchResult>[];
   bool isFocused = false;
 
   int _pendingSearchHandle;
@@ -17,24 +16,22 @@ class Search extends WebComponent {
 
   bool get inProgress => _pendingSearchHandle != null;
 
-  List<SearchResult> get results {
-    if (_lastQuery != searchQuery) {
+  void created() {
+    super.created();
+
+    watch(() => searchQuery, (_) {
       if (_pendingSearchHandle != null) {
         window.clearTimeout(_pendingSearchHandle);
       }
       _pendingSearchHandle = window.setTimeout(() {
         _pendingSearchHandle = null;
-        if (_lastQuery != searchQuery) {
-          _lastQuery = searchQuery;
-          _results = lookupSearchResults(searchQuery, 30);
-          if (_pendingSubmit) {
-            onSubmitCallback();
-            _pendingSubmit = false;
-          }
+        results = lookupSearchResults(searchQuery, 30);
+        if (_pendingSubmit) {
+          onSubmitCallback();
+          _pendingSubmit = false;
         }
       }, 50);
-    }
-    return _results;
+    });
   }
 
   void onBlurCallback(_) {
@@ -71,7 +68,6 @@ class Search extends WebComponent {
       }
       navigateTo(refId);
       searchQuery = "";
-      watchers.dispatch();
     }
   }
 
