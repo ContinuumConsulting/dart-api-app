@@ -586,7 +586,7 @@ x-element-signature {
 }
 
 .element-details:not(.open-details) x-kind-icon {
-  margin-left: 99px;
+  margin-left: 95px;
 }
 
 .kind-class .element-details:not(.open-details) x-kind-icon {
