@@ -17,7 +17,7 @@ BSD-style license that can be found in the LICENSE file.
       <template iterate='block in blocks'>
         <div class="{{block.kindCssClass}}">
           <h3 class="member-block-title">{{block.kindTitle}}</h3>
-          <template iterate='element in block.elements'>
+          <template iterate='element in block.elements.take(2)'>
             <x-element-summary element="{{element}}"></x-element-summary>
           </template>
         </div>
@@ -35,7 +35,7 @@ BSD-style license that can be found in the LICENSE file.
   </element>
 
   <element name="x-element-signature" extends="span">
-    <template indentation="preserve">
+    <template indentation="remove">
       <template instantiate="if element is! ClassElement">
         <span class="element-class">
           <template instantiate="if hasReturnType">

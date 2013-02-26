@@ -149,7 +149,7 @@ void loadLibraryJson(String data) {
   // Invalidate all caches associated with existing libraries as the world
   // of loaded libraries has changed.
   for (var library in libraries.values) {
-    library.invalidate();
+    // library.invalidate();
   }
   var library = new LibraryElement(json.parse(data), null);
   libraries[library.id] = library;
@@ -353,7 +353,7 @@ class Element implements Comparable, Reference {
   void invalidate() {
     _references = null;
     for (var child in children) {
-      child.invalidate();
+      //child.invalidate();
     }
   }
 
@@ -614,7 +614,9 @@ class Element implements Comparable, Reference {
     }
     // TODO(jacobr): is there a compareNoCase member we can use that I am just
     // missing?
-    return name.toLowerCase().compareTo(other.name.toLowerCase());
+    return 
+        name.compareTo(other.name);
+//        name.toLowerCase().compareTo(other.name.toLowerCase());
   }
 }
 

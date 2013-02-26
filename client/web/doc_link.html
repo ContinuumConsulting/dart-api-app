@@ -7,12 +7,7 @@ BSD-style license that can be found in the LICENSE file.
 <html><body>
   <element name="x-doc-link" extends="span">
     <template indentation="remove">
-      <template if="ref.refId != 'void'">
-        <a href="{{permalink(ref)}}">{{refText | final}}</a>
-      </template>
-      <template instantiate="if ref.refId == 'void'">
-        {{ref.name | final}}
-      </template>
+      <a href="{{permalink(ref) | final}}">{{refText | final}}</a>
     </template>
 
     <script type="application/dart">
@@ -33,7 +28,7 @@ BSD-style license that can be found in the LICENSE file.
   </element>
   <element name="x-long-doc-link" extends="span">
     <template indentation="remove">
-      <a href="{{permalink(ref)}}">{{linkName | final}}</a>
+      <a href="{{permalink(ref) | final}}">{{linkName | final}}</a>
     </template>
     <script type="application/dart">
       import 'package:web_ui/web_ui.dart';
@@ -99,19 +94,19 @@ but if not, this syntax should hopefully work:
         (
         <template iterate="param in element.requiredParameters">
           <span class="arg">
-            <x-doc-parameter parameter="{{param}}">
+            <x-doc-parameter parameter="{{param | final}}">
             </x-doc-parameter>
           </span>
         </template>
         <template if="!element.optionalParameters.isEmpty">
-          {{element.optionalParametersStartSymbol}}
+          {{element.optionalParametersStartSymbol | final}}
           <template iterate="param in element.optionalParameters">
             <span class="arg">
-              <x-doc-parameter parameter="{{param}}">
+              <x-doc-parameter parameter="{{param | final}}">
               </x-doc-parameter>
             </span>
           </template>
-          {{element.optionalParametersEndSymbol}}
+          {{element.optionalParametersEndSymbol | final}}
         </template>
         )
       </span>

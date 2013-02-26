@@ -71,7 +71,7 @@ BSD-style license that can be found in the LICENSE file.
                 <template instantiate="if currentType == clazz">
                   <span>{{clazz.shortDescription}}</span>
                   <ul class="tree-list">
-                    <template iterate="member in clazz.sortedChildren(showPrivate, showInherited)">
+                    <template iterate="member in clazz.sortedChildren(showPrivate, showInherited).take(20)">
                       <li class="{{kindCssClass(member)}}" data-id="{{member.id}}">
                         <a href="{{permalink(member)}}">{{member.shortDescription}}</a>
                       </li>
