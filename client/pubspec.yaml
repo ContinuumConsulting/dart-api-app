@@ -8,5 +8,5 @@ dependencies:
   browser: any
   args: any
   logging: any
-  web_ui: any
+  web_ui: {path: ../../web-ui}
   poppy: any
