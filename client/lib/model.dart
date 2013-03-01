@@ -60,7 +60,7 @@ void navigateTo(String referenceId) {
   _recomputeActiveState();
   html.window.history.pushState({},
       currentElement.name,
-      permalink(currentElement));
+      currentElement.link);
   scrollIntoView();
   watchers.dispatch();
 }
@@ -171,59 +171,15 @@ String toUserVisibleKind(Element element) {
   return UI_KIND_TITLES[_normalizedKind(element)];
 }
 
-/**
- * Generate a permalink url fragment for a [Reference].
- */
-String permalink(Reference ref) {
-  var data = {'id': ref.refId,
-              'showPrivate': showPrivate,
-              'showInherited': showInherited};
-
-  var args = <String>[];
-  data.forEach((k,v) {
-    if (v is bool) {
-      if (v) args.add(k);
-    } else {
-      args.add("$k=${encodeUri(v)}");
-    }
-  });
-  return "#!${args.join('&')}";
-}
-
 void loadStateFromUrl() {
   String link = html.window.location.hash;
-  var data = {};
   if (link.length > 2) {
-    try {
-      // strip #! and parse json.
-      for(var part in link.substring(2).split('&')) {
-        part = decodeUri(part);
-        var splitPoint = part.indexOf('=');
-        if (splitPoint != -1) {
-          data[part.substring(0, splitPoint)] = part.substring(splitPoint + 1);
-        } else {
-          // boolean param.
-          data[part] = true;
-        }
-      }
-    } catch (e) {
-      html.window.console.error("Invalid link url");
-      // TODO(jacobr): redirect to default page or better yet attempt to fixup.
-    }
+    // strip #!
+    _currentReferenceId = decodeUri(link.substring(2));
+  } else {
+    _currentReferenceId = '';
   }
 
-  if (data.containsKey('showPrivate')) {
-    showPrivate = data['showPrivate'];
-  } else {
-    showPrivate = false;
-  }
-  if (data.containsKey('showInherited')) {
-    showInherited = data['showInherited'];
-  } else {
-    showInherited = false;
-  }
-
-  _currentReferenceId = data['id'];
   _recomputeActiveState();
   scrollIntoView();
 }
@@ -300,7 +256,7 @@ md.MarkdownNode _resolveNameReference(String name) {
     // TODO(jacobr): this should be foundMember = currentType.members[name];
     final foundMember = null;
     if (foundMember != null) {
-      return makeLink(permalink(foundMember));
+      return makeLink(foundMember.link);
     }
   }
 
@@ -320,7 +276,7 @@ md.MarkdownNode _resolveNameReference(String name) {
           final constructor =
               foundType.constructors[constructorName];
           if (constructor == null) return null;
-          return makeLink(permalink(constructor));
+          return makeLink(constructor.link);
     })();
     if (constructorLink != null) return constructorLink;
 
@@ -333,20 +289,20 @@ md.MarkdownNode _resolveNameReference(String name) {
       // TODO(jacobr): should be foundMember = foundType.members[match[2]];
       var foundMember = null;
       if (foundMember == null) return null;
-      return makeLink(permalink(foundMember));
+      return makeLink(foundMember.link);
     })();
     if (foreignMemberLink != null) return foreignMemberLink;
 
     var foundType = currentLibrary.classes[name];
     if (foundType != null) {
-      return makeLink(permalink(foundType));
+      return makeLink(foundType.link);
     }
 
     // See if it's a top-level member in the current library.
     // TODO(jacobr): should be foundMember = currentLibrary.members[name];
     var foundMember = null;
     if (foundMember != null) {
-      return makeLink(permalink(foundMember));
+      return makeLink(foundMember.link);
     }
   }
 

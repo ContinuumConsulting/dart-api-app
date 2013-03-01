@@ -75,10 +75,6 @@ BSD-style license that can be found in the LICENSE file.
   <element name="x-element-summary" extends="div">
     <template indentation="remove">
       <!--TODO(jacobr): use id instead of data-id and use a different escaping scheme-->
-      <x-details class="element-details {{memberOrTypeClass}}"
-          data-id="{{element.id}}"
-          open="{{isOpen}}">
-         <summary>
           <template if="element.originalParent != element.parent">
             <div class="parent-description">
               Defined by <x-doc-link ref="{{element.originalParent}}"></x-doc-link>
@@ -86,8 +82,6 @@ BSD-style license that can be found in the LICENSE file.
           </template>
           <x-element-signature element="{{element}}">
           </x-element-signature>
-      </summary>
-      </x-details>
     </template>
     <script type="application/dart">
       import 'package:web_ui/web_ui.dart';

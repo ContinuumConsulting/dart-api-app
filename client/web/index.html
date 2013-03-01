@@ -63,21 +63,10 @@ BSD-style license that can be found in the LICENSE file.
       <div class="nav">
         <template instantiate="if currentLibrary != null">
           <ul class="tree-list">
+            
             <template iterate='clazz in currentLibrary.sortedChildren(showPrivate)'>
-              <li class="{{kindCssClass(clazz)}}" data-id="{{clazz.id}}">
-                <template instantiate="if currentType != clazz">
-                  <x-doc-link ref="{{clazz}}"></x-doc-link>
-                </template>
-                <template instantiate="if currentType == clazz">
-                  <span>{{clazz.shortDescription}}</span>
-                  <ul class="tree-list">
-                    <template iterate="member in clazz.sortedChildren(showPrivate, showInherited)">
-                      <li class="{{kindCssClass(member)}}" data-id="{{member.id}}">
-                        <a href="{{permalink(member)}}">{{member.shortDescription}}</a>
-                      </li>
-                    </template>
-                  </ul>
-                </template>
+              <li class="{{kindCssClass(clazz) | final}}" data-id="{{clazz.id | final}}">
+                 <a href="{{clazz.link | final}}">{{clazz.shortDescription | final}}</a>
               </li>
             </template>
           </ul>
@@ -90,8 +79,8 @@ BSD-style license that can be found in the LICENSE file.
           <h3>Libraries</h3>
           <ul class="libraries tree-list">
             <template iterate='library in libraries.values'>
-              <li class="{{kindCssClass(library)}}">
-                <x-doc-link ref="{{library}}"></x-doc-link>
+              <li class="{{kindCssClass(library) | final}}">
+                <x-doc-link ref="{{library | final}}"></x-doc-link>
               </li>
             </template>
           </ul>
@@ -111,9 +100,9 @@ BSD-style license that can be found in the LICENSE file.
           </div>
         </template>
 
-        <template instantiate="if currentLibrary != null && currentType == null">
+        <template instantiate="if currentLibrary != null && currentType == null && false">
           <div>
-            <div><h2><strong>{{currentLibrary.shortDescription}}</strong> library</h2></div>
+            <div><h2><strong>{{currentLibrary.shortDescription | final}}</strong> library</h2></div>
 
             <template instantiate="if !currentLibrary.loading">
               <div>

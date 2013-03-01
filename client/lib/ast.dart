@@ -9,6 +9,7 @@
 library ast;
 
 import 'dart:json' as json;
+import 'dart:uri';
 import 'package:web_ui/safe_html.dart';
 import 'markdown.dart' as md;
 import 'library_loader.dart' as library_loader;
@@ -144,6 +145,15 @@ class Reference {
   // TODO(jacobr): should this be different from name?
   /** Short version of the element's name. */
   String get shortName => name;
+  
+  String get link => _permalink(this);
+}
+
+/**
+ * Generate a permalink url fragment for a [Reference].
+ */
+String _permalink(Reference ref) {
+  return "#!${encodeUri(ref.refId)}";
 }
 
 void loadLibraryJson(String data) {
@@ -610,7 +620,7 @@ class Element implements Comparable, Reference {
     for (var kind in desiredKinds) {
       var elements = blockMap[kind];
       if (elements != null) {
-        blocks.add(new ElementBlock(kind, elements..sort()));
+        blocks.add(new ElementBlock(kind, elements));
       }
     }
     return blocks;
@@ -642,6 +652,8 @@ class Element implements Comparable, Reference {
     // missing?
     return name.toLowerCase().compareTo(other.name.toLowerCase());
   }
+  
+  String get link => _permalink(this);
 }
 
 /**
