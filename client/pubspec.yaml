@@ -1,13 +1,6 @@
-name: api_doc
-version: 0.0.1
-author: Dart Team <misc@dartlang.org>
-description: Dart API documentation browser
-homepage: https://github.com/dart-lang/api-doc
+name: dartdoc_viewer
+description: Dart API Reference
 dependencies:
-  args: any
   browser: any
-  logging: any
-  markdown: any
-  poppy: any
-  unittest: any
   web_ui: any
+  yaml: any
