@@ -1,0 +1,374 @@
+"name" : "DummyLibrary"
+"comment" : "<p>This library is used solely for testing during development and is not intended to be run by the testing machines.</p>"
+"variables" : 
+  "testing" : 
+    "name" : "testing"
+    "qualifiedname" : "DummyLibrary.testing"
+    "comment" : ""
+    "final" : "false"
+    "static" : "false"
+    "type" : "dynamic"
+    "annotations" : 
+      - "meta._Deprecated"
+  "_variable1" : 
+    "name" : "_variable1"
+    "qualifiedname" : "DummyLibrary._variable1"
+    "comment" : "<p>Doc comment for top-level variable.</p>"
+    "final" : "false"
+    "static" : "false"
+    "type" : "dart.core.int"
+    "annotations" : 
+"functions" : 
+  "getA" : 
+    "name" : "getA"
+    "qualifiedname" : "DummyLibrary.getA"
+    "comment" : ""
+    "type" : "method"
+    "static" : "false"
+    "return" : "DummyLibrary.A"
+    "parameters" : 
+      "testInt" : 
+        "name" : "testInt"
+        "qualifiedname" : "DummyLibrary.getA#testInt"
+        "optional" : "false"
+        "named" : "false"
+        "default" : "false"
+        "type" : "dart.core.int"
+        "value" : "null"
+        "annotations" : 
+      "testString" : 
+        "name" : "testString"
+        "qualifiedname" : "DummyLibrary.getA#testString"
+        "optional" : "true"
+        "named" : "false"
+        "default" : "true"
+        "type" : "dart.core.String"
+        "value" : "\"default\""
+        "annotations" : 
+    "annotations" : 
+  "main" : 
+    "name" : "main"
+    "qualifiedname" : "DummyLibrary.main"
+    "comment" : "<p>trying to link to <code>ArgParser</code></p>"
+    "type" : "method"
+    "static" : "false"
+    "return" : "dynamic"
+    "parameters" : 
+    "annotations" : 
+  "_printVariable1" : 
+    "name" : "_printVariable1"
+    "qualifiedname" : "DummyLibrary._printVariable1"
+    "comment" : ""
+    "type" : "method"
+    "static" : "false"
+    "return" : "void"
+    "parameters" : 
+    "annotations" : 
+      - "meta._Deprecated"
+  "variable1=" : 
+    "name" : "variable1="
+    "qualifiedname" : "DummyLibrary.variable1="
+    "comment" : ""
+    "type" : "setter"
+    "static" : "false"
+    "return" : "void"
+    "parameters" : 
+      "abc" : 
+        "name" : "abc"
+        "qualifiedname" : "DummyLibrary.variable1=#abc"
+        "optional" : "false"
+        "named" : "false"
+        "default" : "false"
+        "type" : "dart.core.int"
+        "value" : "null"
+        "annotations" : 
+    "annotations" : 
+"classes" : 
+  "D" : 
+    "name" : "D"
+    "qualifiedname" : "DummyLibrary.D"
+    "comment" : "<p>Class in dart file in sub-directory.</p>"
+    "superclass" : "dart.core.Object"
+    "abstract" : "false"
+    "typedef" : "false"
+    "implements" : 
+    "variables" : 
+      "num" : 
+        "name" : "num"
+        "qualifiedname" : "DummyLibrary.D.num"
+        "comment" : ""
+        "final" : "false"
+        "static" : "false"
+        "type" : "dart.core.int"
+        "annotations" : 
+    "methods" : 
+      "D" : 
+        "name" : "D"
+        "qualifiedname" : "DummyLibrary.D.D"
+        "comment" : "<p>Constructor for <code>D</code></p>"
+        "type" : "constructor"
+        "static" : "false"
+        "return" : "dynamic"
+        "parameters" : 
+          "num" : 
+            "name" : "num"
+            "qualifiedname" : "DummyLibrary.D.D#num"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" : 
+      "add" : 
+        "name" : "add"
+        "qualifiedname" : "DummyLibrary.D.add"
+        "comment" : "<p>D's <code>add</code> method.</p>"
+        "type" : "method"
+        "static" : "false"
+        "return" : "dart.core.int"
+        "parameters" : 
+          "n" : 
+            "name" : "n"
+            "qualifiedname" : "DummyLibrary.A.add#n"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" :
+    "annotations" : 
+  "C" : 
+    "name" : "C"
+    "qualifiedname" : "DummyLibrary.C"
+    "comment" : "<p>Doc comment for class C.</p>"
+    "superclass" : "dart.core.Iterable"
+    "abstract" : "false"
+    "typedef" : "false"
+    "implements" : 
+    "variables" : 
+      "_someNumber" : 
+        "name" : "_someNumber"
+        "qualifiedname" : "DummyLibrary.C._someNumber"
+        "comment" : "<p>Markdown <em>test</em> for <strong>class</strong> <code>C</code></p>"
+        "final" : "false"
+        "static" : "false"
+        "type" : "dart.core.int"
+        "annotations" : 
+    "methods" : 
+      "C" : 
+        "name" : "C"
+        "qualifiedname" : "DummyLibrary.C.C"
+        "comment" : ""
+        "type" : "constructor"
+        "static" : "false"
+        "return" : "dynamic"
+        "parameters" : 
+        "annotations" : 
+      "someNumber" : 
+        "name" : "someNumber"
+        "qualifiedname" : "DummyLibrary.C.someNumber"
+        "comment" : ""
+        "type" : "getter"
+        "static" : "false"
+        "return" : "dart.core.int"
+        "parameters" : 
+        "annotations" : 
+      "doThis" : 
+        "name" : "doThis"
+        "qualifiedname" : "DummyLibrary.C.doThis"
+        "comment" : ""
+        "type" : "method"
+        "static" : "false"
+        "return" : "void"
+        "parameters" : 
+          "x" : 
+            "name" : "x"
+            "qualifiedname" : "DummyLibrary.C.doThis#x"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" : 
+      "multi" : 
+        "name" : "multi"
+        "qualifiedname" : "DummyLibrary.C.multi"
+        "comment" : ""
+        "type" : "method"
+        "static" : "false"
+        "return" : "dart.core.int"
+        "parameters" : 
+          "x" : 
+            "name" : "x"
+            "qualifiedname" : "DummyLibrary.C.multi#x"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" : 
+    "annotations" : 
+  "_Testing" : 
+    "name" : "_Testing"
+    "qualifiedname" : "DummyLibrary._Testing"
+    "comment" : ""
+    "superclass" : "dart.core.Object"
+    "abstract" : "false"
+    "typedef" : "false"
+    "implements" : 
+    "variables" : 
+    "methods" : 
+      "_Testing" : 
+        "name" : "_Testing"
+        "qualifiedname" : "DummyLibrary._Testing._Testing"
+        "comment" : ""
+        "type" : "constructor"
+        "static" : "false"
+        "return" : "dynamic"
+        "parameters" : 
+        "annotations" : 
+    "annotations" : 
+  "A" : 
+    "name" : "A"
+    "qualifiedname" : "DummyLibrary.A"
+    "comment" : "<p>Doc comment for class A.</p> <p>Multiline Test</p>"
+    "superclass" : "dart.core.Object"
+    "abstract" : "false"
+    "typedef" : "false"
+    "implements" : 
+    "variables" : 
+      "_someNumber" : 
+        "name" : "_someNumber"
+        "qualifiedname" : "DummyLibrary.A._someNumber"
+        "comment" : "<p>A's _someNumber</p>"
+        "final" : "false"
+        "static" : "false"
+        "type" : "dart.core.int"
+        "annotations" : 
+    "methods" : 
+      "add" : 
+        "name" : "add"
+        "qualifiedname" : "DummyLibrary.A.add"
+        "comment" : "<p>A's <code>add</code> method.</p>"
+        "type" : "method"
+        "static" : "false"
+        "return" : "dart.core.int"
+        "parameters" : 
+          "n" : 
+            "name" : "n"
+            "qualifiedname" : "DummyLibrary.A.add#n"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" : 
+          - "meta._Override"
+      "A" : 
+        "name" : "A"
+        "qualifiedname" : "DummyLibrary.A.A"
+        "comment" : ""
+        "type" : "constructor"
+        "static" : "false"
+        "return" : "dynamic"
+        "parameters" : 
+        "annotations" : 
+      "A.withThree" : 
+        "name" : "A.withThree"
+        "qualifiedname" : "DummyLibrary.A.A.withThree"
+        "comment" : ""
+        "type" : "constructor"
+        "static" : "false"
+        "return" : "dynamic"
+        "parameters" : 
+        "annotations" : 
+      "someNumber" : 
+        "name" : "someNumber"
+        "qualifiedname" : "DummyLibrary.A.someNumber"
+        "comment" : "<p>Originally set to 12 in constructor <code>A</code>, use <code>A.withThree</code> for 3.</p>"
+        "type" : "getter"
+        "static" : "false"
+        "return" : "dart.core.int"
+        "parameters" : 
+        "annotations" : 
+      "doThis" : 
+        "name" : "doThis"
+        "qualifiedname" : "DummyLibrary.A.doThis"
+        "comment" : ""
+        "type" : "method"
+        "static" : "false"
+        "return" : "void"
+        "parameters" : 
+          "a" : 
+            "name" : "a"
+            "qualifiedname" : "DummyLibrary.A.doThis#a"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" : 
+      "multi" : 
+        "name" : "multi"
+        "qualifiedname" : "DummyLibrary.A.multi"
+        "comment" : ""
+        "type" : "method"
+        "static" : "false"
+        "return" : "dart.core.int"
+        "parameters" : 
+          "a" : 
+            "name" : "a"
+            "qualifiedname" : "DummyLibrary.A.multi#a"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" : 
+    "annotations" : 
+      - "DummyLibrary._Testing"
+  "_B" : 
+    "name" : "_B"
+    "qualifiedname" : "DummyLibrary._B"
+    "comment" : ""
+    "superclass" : "DummyLibrary.A"
+    "abstract" : "true"
+    "typedef" : "false"
+    "implements" : 
+      - "DummyLibrary.D"
+    "variables" : 
+      "_someNumber" : 
+        "name" : "_someNumber"
+        "qualifiedname" : "DummyLibrary.A._someNumber"
+        "comment" : "<p>_B's _someNumber</p>"
+        "final" : "false"
+        "static" : "false"
+        "type" : "dart.core.int"
+        "annotations" :
+    "methods" : 
+      "add" : 
+        "name" : "add"
+        "qualifiedname" : "DummyLibrary._B.add"
+        "comment" : "<p>B's <code>add</code> method.</p>"
+        "type" : "method"
+        "static" : "false"
+        "return" : "dart.core.int"
+        "parameters" : 
+          "n" : 
+            "name" : "n"
+            "qualifiedname" : "DummyLibrary._B.add#n"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" : 
+    "annotations" : 

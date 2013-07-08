@@ -1,0 +1,42 @@
+"name" : "sub_directory.dart"
+"comment" : ""
+"variables" : 
+"functions" : 
+"classes" : 
+  "D" : 
+    "name" : "D"
+    "qualifiedname" : "sub_directory.dart.D"
+    "comment" : "<p>Class in dart file in sub-directory.</p>"
+    "superclass" : "dart.core.Object"
+    "abstract" : "false"
+    "typedef" : "false"
+    "implements" : 
+    "variables" : 
+      "num" : 
+        "name" : "num"
+        "qualifiedname" : "sub_directory.dart.D.num"
+        "comment" : ""
+        "final" : "false"
+        "static" : "false"
+        "type" : "dart.core.int"
+        "annotations" : 
+    "methods" : 
+      "D" : 
+        "name" : "D"
+        "qualifiedname" : "sub_directory.dart.D.D"
+        "comment" : "<p>Constructor for <code>D</code></p>"
+        "type" : "constructor"
+        "static" : "false"
+        "return" : "dynamic"
+        "parameters" : 
+          "num" : 
+            "name" : "num"
+            "qualifiedname" : "sub_directory.dart.D.D#num"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" : 
+    "annotations" : 

@@ -1,0 +1,78 @@
+"name" : "second.dart"
+"comment" : ""
+"variables" : 
+"functions" : 
+"classes" : 
+  "C" : 
+    "name" : "C"
+    "qualifiedname" : "second.dart.C"
+    "comment" : "<p>Doc comment for class C.</p>"
+    "superclass" : "dart.core.Iterable"
+    "abstract" : "false"
+    "typedef" : "false"
+    "implements" : 
+    "variables" : 
+      "_someNumber" : 
+        "name" : "_someNumber"
+        "qualifiedname" : "second.dart.C._someNumber"
+        "comment" : "<p>Markdown <em>test</em> for <strong>class</strong> <code>C</code></p>"
+        "final" : "false"
+        "static" : "false"
+        "type" : "dart.core.int"
+        "annotations" : 
+    "methods" : 
+      "C" : 
+        "name" : "C"
+        "qualifiedname" : "second.dart.C.C"
+        "comment" : ""
+        "type" : "constructor"
+        "static" : "false"
+        "return" : "dynamic"
+        "parameters" : 
+        "annotations" : 
+      "someNumber" : 
+        "name" : "someNumber"
+        "qualifiedname" : "second.dart.C.someNumber"
+        "comment" : ""
+        "type" : "getter"
+        "static" : "false"
+        "return" : "dart.core.int"
+        "parameters" : 
+        "annotations" : 
+      "doThis" : 
+        "name" : "doThis"
+        "qualifiedname" : "second.dart.C.doThis"
+        "comment" : ""
+        "type" : "method"
+        "static" : "false"
+        "return" : "void"
+        "parameters" : 
+          "x" : 
+            "name" : "x"
+            "qualifiedname" : "second.dart.C.doThis#x"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" : 
+      "multi" : 
+        "name" : "multi"
+        "qualifiedname" : "second.dart.C.multi"
+        "comment" : ""
+        "type" : "method"
+        "static" : "false"
+        "return" : "dart.core.int"
+        "parameters" : 
+          "x" : 
+            "name" : "x"
+            "qualifiedname" : "second.dart.C.multi#x"
+            "optional" : "false"
+            "named" : "false"
+            "default" : "false"
+            "type" : "dart.core.int"
+            "value" : "null"
+            "annotations" : 
+        "annotations" : 
+    "annotations" : 

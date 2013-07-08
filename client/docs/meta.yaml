@@ -1,0 +1,61 @@
+"name" : "meta"
+"comment" : "<p>This library contains the definitions of annotations that provide additional semantic information about the program being annotated. These annotations are intended to be used by tools to provide a better user experience.</p> <h2>Installing</h2> <p>Use <a href=\"http://pub.dartlang.org\">pub</a> to install this package. Add the following to your <code>pubspec.yaml</code> file.</p> <pre><code>dependencies:   meta: any </code></pre> <p>Then run <code>pub install</code>.</p> <p>For more information, see the <a href=\"http://pub.dartlang.org/packages/meta\">meta package on pub.dartlang.org</a>.</p>"
+"variables" : 
+  "override" : 
+    "name" : "override"
+    "qualifiedname" : "meta.override"
+    "comment" : "<p>An annotation used to mark an instance member (method, field, getter or setter) as overriding an inherited class member. Tools can use this annotation to provide a warning if there is no overridden member.</p>"
+    "final" : "false"
+    "static" : "false"
+    "type" : "dynamic"
+    "annotations" : 
+  "deprecated" : 
+    "name" : "deprecated"
+    "qualifiedname" : "meta.deprecated"
+    "comment" : "<p>An annotation used to mark a class, field, getter, setter, method, top-level variable, or top-level function as one that should no longer be used. Tools can use this annotation to provide a warning on references to the marked element.</p>"
+    "final" : "false"
+    "static" : "false"
+    "type" : "dynamic"
+    "annotations" : 
+"functions" : 
+"classes" : 
+  "_Override" : 
+    "name" : "_Override"
+    "qualifiedname" : "meta._Override"
+    "comment" : ""
+    "superclass" : "dart.core.Object"
+    "abstract" : "false"
+    "typedef" : "false"
+    "implements" : 
+    "variables" : 
+    "methods" : 
+      "_Override" : 
+        "name" : "_Override"
+        "qualifiedname" : "meta._Override._Override"
+        "comment" : ""
+        "type" : "constructor"
+        "static" : "false"
+        "return" : "dynamic"
+        "parameters" : 
+        "annotations" : 
+    "annotations" : 
+  "_Deprecated" : 
+    "name" : "_Deprecated"
+    "qualifiedname" : "meta._Deprecated"
+    "comment" : ""
+    "superclass" : "dart.core.Object"
+    "abstract" : "false"
+    "typedef" : "false"
+    "implements" : 
+    "variables" : 
+    "methods" : 
+      "_Deprecated" : 
+        "name" : "_Deprecated"
+        "qualifiedname" : "meta._Deprecated._Deprecated"
+        "comment" : ""
+        "type" : "constructor"
+        "static" : "false"
+        "return" : "dynamic"
+        "parameters" : 
+        "annotations" : 
+    "annotations" : 
